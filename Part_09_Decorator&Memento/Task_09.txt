@@ -1,0 +1,45 @@
+1. Реализовать паттерн Decorator для системы сериализации. 
+Декорируемым объектом является сам сериализатор, который имеет минимум следующие методы:
+
+Разработать 2 декоратора: сжимающий декоратор и шифрующий декоратор:
+
+class Person
+{
+	[Store]
+	int age;
+	
+	[Store]
+	double height;
+	
+	int salary;
+	
+	[Store]
+	string name;
+	
+	[Store]
+	string lastname;
+}
+
+static void Main()
+{
+	Person person = new Person();
+	
+	MySerializer serializer = new MySerializer();
+	MyComressSerilizer compress = new MyComressSerilizer(serializer);
+	FileStream fstream = new FileStream("student.dat", FileMode.Create, FileAccess.Write, FileShare.None);
+    compress.Serialize(fstream, person);      
+    fstream.Close();
+	
+	// десериализация одиночного объекта
+	FileStream fstream2 = File.OpenRead("student.dat");
+	Person man2 = (Person)compress.Deserialize(fstream2);
+	fstream2.Close();
+}
+
+2. Реализовать паттерн Memento для системы резервного копирования. Требования к системе:
+- класс Memento (контейнер) позволяет хранить различные свойства в любом количестве, разных типов,
+является универсальным
+- хранилище позволяет хранить много копий контейнеров
+- из хранилища можно извлекать контейнеры по номеру
+- из хранилища можно извлекать контейнеры по дате и времени сохранения
+- хранилище можно сгрузить в файл

@@ -1,0 +1,50 @@
+1. Пользователь указывает имя исходной папки и маску файлов. Программа сканирует папку и подпапки и находит
+все файлы, которые удовлетворяют указанной маске (*.txt, a*.*). После чего программа формирует файл отчёта в формате XML.
+Использовать XMLDOM.
+
+Пример:
+<folder name="c:\temp">
+	<folder name="c:\Students">
+		<file name"test.txt" size="12312">
+	</folder>
+	
+	<file name"read.txt" size="124555">
+</folder>
+
+2. Разработать свой механизм сериализации, который позволяет сериализовать и десериализовать экземпляр пользоватьского
+класса в файл определённого, заданного сериализатором формата. Атрибуты показывают свойства, которые нужно сериализовать.
+Ограничение на типы полей: Int32, String, Double
+
+Пример:
+
+class Person
+{
+	[Store]
+	int age;
+	
+	[Store]
+	double height;
+	
+	int salary;
+	
+	[Store]
+	string name;
+	
+	[Store]
+	string lastname;
+}
+
+static void Main()
+{
+	Person person = new Person();
+	
+	MySerializer serializer = new MySerializer();
+	FileStream fstream = new FileStream("student.dat", FileMode.Create, FileAccess.Write, FileShare.None);
+    serializer.Serialize(fstream, person);      
+    fstream.Close();
+	
+	// десериализация одиночного объекта
+	FileStream fstream2 = File.OpenRead("student.dat");
+	Person man2 = (Person)serializer.Deserialize(fstream2);
+	fstream2.Close();
+}

@@ -1,0 +1,7 @@
+D:\Developer\VS_projects\Ivanov_LINQ\Ivanov_LINQ\bin\Debug\Ivanov_LINQ.exe.config
+D:\Developer\VS_projects\Ivanov_LINQ\Ivanov_LINQ\bin\Debug\Ivanov_LINQ.exe
+D:\Developer\VS_projects\Ivanov_LINQ\Ivanov_LINQ\bin\Debug\Ivanov_LINQ.pdb
+D:\Developer\VS_projects\Ivanov_LINQ\Ivanov_LINQ\obj\Debug\Ivanov_LINQ.csproj.AssemblyReference.cache
+D:\Developer\VS_projects\Ivanov_LINQ\Ivanov_LINQ\obj\Debug\Ivanov_LINQ.csproj.CoreCompileInputs.cache
+D:\Developer\VS_projects\Ivanov_LINQ\Ivanov_LINQ\obj\Debug\Ivanov_LINQ.exe
+D:\Developer\VS_projects\Ivanov_LINQ\Ivanov_LINQ\obj\Debug\Ivanov_LINQ.pdb
